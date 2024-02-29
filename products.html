@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link rel="stylesheet" href="productstyle.css"> <!-- External CSS file for styling -->
+</head>
+<body>
+    
+    <header>
+        <h1>Shoe Store</h1>
+        <nav>
+            <ul>
+                <li><a href="div_class.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products">
+        <div class="product">
+            <img src="shoe1.jpg" alt="Shoe 1">
+            <h2>White Sneaker's</h2>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $99.99</p>
+            <button onclick="confirmPayment()">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="shoe2.jpg" alt="Shoe 2">
+            <h2>Black Oxford</h2>
+            <p>Description of Product 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $79.99</p>
+            <button onclick="confirmPayment()">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="shoe3.jpg" alt="Shoe 3">
+            <h2>Brown Brogues</h2>
+            <p>Description of Product 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $129.99</p>
+            <button onclick="confirmPayment()">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="shoe4.jpg" alt="Shoe 4">
+            <h2>Suede Chelsea's</h2>
+            <p>Description of Product 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $129.99</p>
+            <button onclick="confirmPayment()">Add to Cart</button>
+        </div>
+
+    </main>
+
+    <!-- Confirmation dialog -->
+    <div id="confirmDialog" class="confirm-dialog">
+        <p>Are you sure you want to proceed with the payment?</p>
+        <button onclick="proceedWithPayment()">Yes</button>
+        <button onclick="cancelPayment()">No</button>
+    </div>
+
+    <!-- JavaScript for payment confirmation -->
+    <script>
+        function confirmPayment() {
+            var confirmDialog = document.getElementById("confirmDialog");
+            confirmDialog.style.display = "block"; // Show the confirmation dialog
+        }
+
+        function proceedWithPayment() {
+            var confirmDialog = document.getElementById("confirmDialog");
+            confirmDialog.style.display = "none"; // Hide the confirmation dialog
+            purchaseSuccess(); // Proceed with the payment
+        }
+
+        function cancelPayment() {
+            var confirmDialog = document.getElementById("confirmDialog");
+            confirmDialog.style.display = "none"; // Hide the confirmation dialog
+        }
+
+        function purchaseSuccess() {
+            alert("Purchase successful! Thank you for shopping with us.");
+        }
+    </script>
+    <footer>
+        <div class="subscribe">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="social">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Shoe Store. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

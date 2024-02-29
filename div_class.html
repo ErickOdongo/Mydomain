@@ -1,0 +1,94 @@
+xc <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2>Password Validation</h2>
+
+<form onsubmit="return validatePassword()">
+    <label for="password">Enter Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+  <main>
+    <div class="section">
+      <section class="hero">
+        <h2 class="fade-in">Discover Amazing Products</h2>
+        <p class="slide-in">Explore our wide range of products designed to meet your needs.</p>
+        <a href="Products.html" class="btn pulse">Shop Now</a>
+    </section>
+    </div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+     <img src="stock1.jpg"style="width:100%">
+      </div>
+      <div class="mySlides fade">
+     <img src="stock2.jpg"style="width:100%">
+      </div>
+      <div class="mySlides fade">
+     <img src="stock3.jpg"style="width:100%">
+      </div>
+      <div class="mySlides fade">
+     <img src="stock4.jpg"style="width:100%">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+      <a class="next" onclick="plusSlides(1)">&#10095</a>
+    </div>
+  </main>
+  <script>
+    var slideIndex=0;
+    showSlides();
+    function showSlides(){
+      var i;
+      var slides = document.getElementsByClassName("mySlide");
+      for(i=0; i<slides.length; i++){
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if(slideIndex > slide.length){slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 2000);
+    }
+    function plusSlides(){
+      showSlides(slideIndex +=n);
+    }
+    function validatePassword() {
+    var password = document.getElementById("password").value;
+
+    // Password validation logic
+    var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+    if (!regex.test(password)) {
+        alert("Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character.");
+        return false;
+    }
+
+    // Redirect to the desired page if the password is valid
+    window.location.href = "welcome.html"; // Change "welcome.html" to your desired page
+    return true;
+}
+  </script>
+
+  <footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
